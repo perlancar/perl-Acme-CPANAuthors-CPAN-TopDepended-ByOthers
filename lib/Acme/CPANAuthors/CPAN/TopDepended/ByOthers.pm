@@ -38,8 +38,6 @@ distributions.
 
 This list is produced by querying a local mini CPAN mirror using this command:
 
-except that only distributions
-
  % lcpan authors-by-rdep-count --exclude-same-author | head -n 50
 
 Statistics of the CPAN mirror:
