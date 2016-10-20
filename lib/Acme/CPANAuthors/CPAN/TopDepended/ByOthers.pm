@@ -16,7 +16,7 @@ use Acme::CPANAuthors::Register (
 =head1 SYNOPSIS
 
    use Acme::CPANAuthors;
-   use Acme::CPANAuthors::TopDepended::ByOthers;
+   use Acme::CPANAuthors::CPAN::TopDepended::ByOthers;
 
    my $authors = Acme::CPANAuthors->new('CPAN::TopDepended::ByOthers');
 
