@@ -7,7 +7,7 @@ use strict;
 use warnings;
 
 use Acme::CPANAuthors::Register (
-# CODE: require App::lcpan::Call; require Data::Dmp; my $res = App::lcpan::Call::call_lcpan_script(argv => ['authors-by-rdep-count', '--exclude-same-author']); die "$res->[0] - $res->[1]" unless $res->[0] == 200; my $i = 0; for my $row (@{ $res->[2] }) { last if ++$i > 50; printf qq{   %-11s => %-40s # %6d\n}, Data::Dmp::dmp($row->{id}), Data::Dmp::dmp($row->{name}) . ",", $row->{rdep_count} }
+# CODE: require App::lcpan::Call; require Data::Dmp; $main::res = App::lcpan::Call::call_lcpan_script(argv => ['authors-by-rdep-count', '--exclude-same-author']); die "$main::res->[0] - $main::res->[1]" unless $main::res->[0] == 200; splice @{ $main::res->[2] }, 50; my $i = 0; for my $row (@{ $main::res->[2] }) { $row->{rank} = ++$i; printf qq{   %-11s => %-40s # %6d\n}, Data::Dmp::dmp($row->{id}), Data::Dmp::dmp($row->{name}) . ",", $row->{rdep_count} }
 );
 
 1;
@@ -43,6 +43,10 @@ This list is produced by querying a local mini CPAN mirror using this command:
 Statistics of the CPAN mirror:
 
 # COMMAND: lcpan stats-last-index-time --format text-pretty
+
+Current ranking:
+
+# CODE: require Perinci::Result::Format::Lite; print Perinci::Result::Format::Lite::format($main::res, 'text-pretty');
 
 
 =head1 SEE ALSO
