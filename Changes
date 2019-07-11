@@ -1,13 +1,13 @@
-0.003   2016-10-20 (PERLANCAR)
+0.003   2016-10-20  Released-By: PERLANCAR
 
         - [build] Rebuild, show rankings in POD.
 
 
-0.002   2016-10-14 (PERLANCAR)
+0.002   2016-10-14  Released-By: PERLANCAR
 
         - [build] Rebuild with updated lcpan which fixes the SQL query.
 
 
-0.001   2016-10-14 (PERLANCAR)
+0.001   2016-10-14  Released-By: PERLANCAR
 
         - First release.
